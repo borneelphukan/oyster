@@ -1,5 +1,4 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import React from "react";
 
 type Props = {
   label: string;
