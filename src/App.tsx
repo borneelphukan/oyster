@@ -6,6 +6,7 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/Error";
+import Privacy from "./pages/Privacy";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
 
           <Route path="/About" element={<About />} />
           <Route path="/Pricing" element={<Pricing />} />
+          <Route path="/Privacy" element={<Privacy />} />
           <Route path="/Contact" element={<Contact />} />
           {/* Add a catch-all route for 404 Not Found */}
           <Route path="*" element={<NotFound />} />

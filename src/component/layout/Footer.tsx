@@ -13,7 +13,7 @@ const navigation = {
   ],
   legal: [
     { name: "Terms of service", href: "#" },
-    { name: "Privacy policy", href: "#" },
+    { name: "Privacy policy", href: "/Privacy" },
     { name: "Cancellation policy", href: "#" },
   ],
   social: [
