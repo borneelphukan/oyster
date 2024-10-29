@@ -8,7 +8,7 @@ type FrequencyOption = {
   value: Frequency;
   label: string;
   priceSuffix: string;
-}
+};
 
 type PricingTier = {
   name: string;
@@ -18,12 +18,12 @@ type PricingTier = {
   description: string;
   features: string[];
   mostPopular: boolean;
-}
+};
 
 type Pricing = {
   frequencies: FrequencyOption[];
   tiers: PricingTier[];
-}
+};
 
 const pricing: Pricing = {
   frequencies: [
@@ -93,19 +93,19 @@ export default function Pricing() {
   );
 
   return (
-    <div className="bg-gray-900 sm:pt-32 pt-16">
+    <div className="sm:pt-32 pt-16">
       <main>
         {/* Pricing section */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-base font-semibold leading-7 text-indigo-400">
+            <h1 className="text-base font-semibold leading-7 dark:text-indigo-400 text-indigo-950">
               Pricing
             </h1>
-            <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+            <p className="mt-2 text-balance text-5xl font-semibold tracking-tight dark:text-white sm:text-6xl">
               Price tailored as per your needs
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-400 sm:text-xl/8">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-200 dark:text-gray-400 sm:text-xl/8">
             Choose an affordable plan that’s packed with the best tools for
             better data analysis and more diverse sources
           </p>
@@ -114,7 +114,7 @@ export default function Pricing() {
               <RadioGroup
                 value={frequency}
                 onChange={setFrequency}
-                className="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs font-semibold leading-5 text-white"
+                className="grid grid-cols-2 gap-x-1 rounded-full bg-gray-400 p-1 text-center text-xs font-semibold leading-5 dark:text-white"
               >
                 {pricing.frequencies.map((option) => (
                   <Radio
@@ -122,7 +122,7 @@ export default function Pricing() {
                     value={option}
                     className={({ checked }) =>
                       classNames(
-                        checked ? "bg-indigo-500" : "",
+                        checked ? "bg-cyan-500 text-white" : "",
                         "cursor-pointer rounded-full px-2.5 py-1"
                       )
                     }
@@ -133,7 +133,7 @@ export default function Pricing() {
               </RadioGroup>
             </fieldset>
           </div>
-          <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 mb-10">
             {pricing.tiers.map((tier) => (
               <PriceCard
                 key={tier.id}

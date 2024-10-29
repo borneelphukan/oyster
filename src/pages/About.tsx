@@ -41,7 +41,7 @@ const team = [
   {
     avatar: "/images/team/gurdeep.jpeg",
     name: "Gurdeep Singh Bhambra",
-    role: "Co-Founder, CEO",
+    role: "Founder, CEO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore…",
     link1: "https://www.linkedin.com/in/gurdeep-bhambra/",
@@ -49,7 +49,7 @@ const team = [
   {
     avatar: "/images/team/borneel.png",
     name: "Borneel Bikash Phukan",
-    role: "Co-Founder, CTO",
+    role: "CTO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore…",
     link1: "https://www.linkedin.com/in/borneelphukan",
@@ -58,63 +58,15 @@ const team = [
 
   // More people...
 ];
-const blogPosts = [
-  {
-    id: 1,
-    title: "Vel expedita assumenda placeat aut nisi optio voluptates quas",
-    href: "#",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    author: {
-      name: "Michael Foster",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-  // More posts...
-];
 
 export default function Example() {
   return (
-    <div className="bg-white">
+    <>
       {/* Header */}
 
       <main className="isolate">
         {/* Hero section */}
         <div className="relative isolate -z-10">
-          <svg
-            aria-hidden="true"
-            className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-          >
-            <defs>
-              <pattern
-                x="50%"
-                y={-1}
-                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                width={200}
-                height={200}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-            />
-          </svg>
           <div
             aria-hidden="true"
             className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
@@ -131,7 +83,7 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
                     We’re changing the data aggregration scenario
                   </h1>
                   <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:max-w-md sm:text-xl/8 lg:max-w-none">
@@ -199,18 +151,18 @@ export default function Example() {
         {/* Content section */}
         <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
               Our mission
             </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-xl leading-8 text-gray-600">
+                <p className="text-xl leading-8 text-gray-600 dark:text-gray-300">
                   Aliquet nec orci mattis amet quisque ullamcorper neque, nibh
                   sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque
                   id at vitae feugiat egestas ac. Diam nulla orci at in viverra
                   scelerisque eget. Eleifend egestas fringilla sapien.
                 </p>
-                <p className="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                <p className="mt-10 max-w-xl text-base leading-7 text-gray-700 dark:text-gray-300">
                   Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
                   risus enim. Mattis mauris semper sed amet vitae sed turpis id.
                   Id dolor praesent donec est. Odio penatibus risus viverra
@@ -243,10 +195,10 @@ export default function Example() {
         {/* Values section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
               Our values
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
               magnam voluptatum cupiditate veritatis in accusamus quisquam.
             </p>
@@ -254,98 +206,24 @@ export default function Example() {
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {values.map((value) => (
               <div key={value.name}>
-                <dt className="font-semibold text-gray-900">{value.name}</dt>
-                <dd className="mt-1 text-gray-600">{value.description}</dd>
+                <dt className="font-semibold text-gray-900 dark:text-gray-400">
+                  {value.name}
+                </dt>
+                <dd className="mt-1 text-gray-600 dark:text-gray-300">
+                  {value.description}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
 
-        {/* Logo cloud */}
-        <div className="relative isolate -z-10 mt-32 sm:mt-48">
-          <div className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
-            <svg
-              aria-hidden="true"
-              className="h-[40rem] w-[80rem] flex-none stroke-gray-200"
-            >
-              <defs>
-                <pattern
-                  x="50%"
-                  y="50%"
-                  id="e9033f3e-f665-41a6-84ef-756f6778e6fe"
-                  width={200}
-                  height={200}
-                  patternUnits="userSpaceOnUse"
-                  patternTransform="translate(-100 0)"
-                >
-                  <path d="M.5 200V.5H200" fill="none" />
-                </pattern>
-              </defs>
-              <svg x="50%" y="50%" className="overflow-visible fill-gray-50">
-                <path
-                  d="M-300 0h201v201h-201Z M300 200h201v201h-201Z"
-                  strokeWidth={0}
-                />
-              </svg>
-              <rect
-                fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)"
-                width="100%"
-                height="100%"
-                strokeWidth={0}
-              />
-            </svg>
-          </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-              Trusted by the world’s most innovative teams
-            </h2>
-            <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-              <img
-                alt="Transistor"
-                src="https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg"
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="Reform"
-                src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg"
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="Tuple"
-                src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg"
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="SavvyCal"
-                src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg"
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              />
-              <img
-                alt="Statamic"
-                src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg"
-                width={158}
-                height={48}
-                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              />
-            </div>
-          </div>
-        </div>
-
         {/* Team section */}
         <div className="mx-auto my-16 max-w-7xl px-6 sm:mt-48 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Our team
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+              Meet the Team
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               We’re a dynamic group of individuals who are passionate about what
               we do and dedicated to delivering the best results for our
               clients.
@@ -425,6 +303,6 @@ export default function Example() {
           </div>
         </div> */}
       </main>
-    </div>
+    </>
   );
 }

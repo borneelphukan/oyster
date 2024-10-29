@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class", // Enable dark mode using 'class'
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -47,10 +48,17 @@ export default {
           400: "#E8E8E9",
           500: "#ECEFF1",
         },
+        cyan: {
+          100: "#045D73",
+          200: "#0BC5EA",
+          300: "#CFFAFE",
+          400: "#E0FCFF",
+        },
+
         light: "#F9FAFB",
         dark: {
-          DEFAULT: "#131317",
-          100: "#28282C",
+          DEFAULT: "#111827", // Primary dark color
+          100: "#28282C", // Slightly lighter dark shade
         },
       },
     },

@@ -33,8 +33,8 @@ const PriceCard = (props: Props) => {
       onClick={onClick}
       className={classNames(
         isSelected
-          ? "bg-white/5 ring-2 ring-indigo-500"
-          : "ring-1 ring-white/10",
+          ? " ring-2 ring-indigo-500"
+          : "ring-1 ring-gray-400 dark:gray-900",
         "rounded-3xl p-8 xl:p-10 cursor-pointer transform transition-transform duration-200 hover:scale-105"
       )}
       role="button"
