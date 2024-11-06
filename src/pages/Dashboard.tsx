@@ -63,47 +63,71 @@ const Dashboard = () => {
           rowHeight={150}
           draggableHandle=".drag-handle"
         >
-          <div key="earnings" className="bg-white rounded-lg shadow p-4">
+          <div
+            key="earnings"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-4"
+          >
             <MetricCard title="Earnings" value="$350.4" />
           </div>
-          <div key="spend" className="bg-white rounded-lg shadow p-4">
+          <div
+            key="spend"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-4"
+          >
             <MetricCard title="Spend this month" value="$642.39" />
           </div>
-          <div key="sales" className="bg-white rounded-lg shadow p-4">
+          <div
+            key="sales"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-4"
+          >
             <MetricCard title="Sales" value="$574.34" />
           </div>
-          <div key="balance" className="bg-white rounded-lg shadow p-4">
+          <div
+            key="balance"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-4"
+          >
             <MetricCard title="Your balance" value="$1,000" />
           </div>
 
-          <div key="lineChart" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="lineChart"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Total Spend
             </h3>
-            <div className="h-40 bg-gray-400 rounded-lg">
+            <div className="h-40 bg-gray-400 dark:bg-gray-800 rounded-lg">
               Line Chart Placeholder
             </div>
           </div>
 
-          <div key="weeklyRevenue" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="weeklyRevenue"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Weekly Revenue
             </h3>
-            <div className="h-40 bg-gray-400 rounded-lg">
+            <div className="h-40 bg-gray-400 dark:bg-gray-800 rounded-lg">
               Bar Chart Placeholder
             </div>
           </div>
 
-          <div key="dailyTraffic" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="dailyTraffic"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Daily Traffic
             </h3>
-            <div className="h-40 bg-gray-400 rounded-lg">
+            <div className="h-40 bg-gray-400 dark:bg-gray-800 rounded-lg">
               Traffic Chart Placeholder
             </div>
           </div>
 
-          <div key="checkTable" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="checkTable"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Check Table
             </h3>
@@ -127,7 +151,10 @@ const Dashboard = () => {
             </table>
           </div>
 
-          <div key="complexTable" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="complexTable"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Complex Table
             </h3>
@@ -151,30 +178,42 @@ const Dashboard = () => {
             </table>
           </div>
 
-          <div key="pieChart" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="pieChart"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Your Pie Chart
             </h3>
-            <div className="h-40 bg-gray-400 rounded-lg">
+            <div className="h-40 bg-gray-400 dark:bg-gray-800 rounded-lg">
               Pie Chart Placeholder
             </div>
           </div>
 
-          <div key="calendar" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="calendar"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">Calendar</h3>
-            <div className="h-40 bg-gray-400 rounded-lg">
+            <div className="h-40 bg-gray-400 dark:bg-gray-800 rounded-lg">
               Calendar Placeholder
             </div>
           </div>
 
-          <div key="teamMembers" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="teamMembers"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">
               Team Members
             </h3>
             <TeamMember name="Adela Parkson" role="Creative Director" />
           </div>
 
-          <div key="tasks" className="bg-white rounded-lg shadow p-6">
+          <div
+            key="tasks"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+          >
             <h3 className="text-lg font-semibold mb-4 drag-handle">Tasks</h3>
             <ul className="space-y-2">
               <li>Landing Page Design</li>
@@ -195,7 +234,7 @@ const Sidebar = ({
 }) => {
   return (
     <div
-      className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg p-6 transform lg:translate-x-0 ${
+      className={`fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 shadow-lg p-6 transform lg:translate-x-0 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out z-50 lg:relative lg:translate-x-0`}
     >
@@ -218,15 +257,15 @@ const Sidebar = ({
 
 const SidebarItem = ({ icon, label }: { icon: JSX.Element; label: string }) => {
   return (
-    <div className="flex items-center space-x-4 p-3 rounded-lg cursor-pointer hover:bg-gray-100">
-      <div className="text-gray-500">{icon}</div>
-      <span className="text-gray-800 font-medium">{label}</span>
+    <div className="flex items-center space-x-4 p-3 rounded-lg cursor-pointer hover:bg-gray-400 dark:hover:bg-gray-100">
+      <div className="text-gray-200 dark:text-white">{icon}</div>
+      <span className="text-gray-800 dark:text-gray-500 font-medium">{label}</span>
     </div>
   );
 };
 
 const MetricCard = ({ title, value }: { title: string; value: string }) => (
-  <div className="bg-white rounded-lg shadow p-4 text-center">
+  <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
     <h4 className="font-semibold">{title}</h4>
     <p className="text-2xl">{value}</p>
   </div>
