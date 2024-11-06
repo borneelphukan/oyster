@@ -199,7 +199,6 @@ const Sidebar = ({
         isOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out z-50 lg:relative lg:translate-x-0`}
     >
-      <h2 className="text-2xl font-bold mb-8">Oyster IO</h2>
       <nav className="space-y-4">
         <SidebarItem icon={<FaHome />} label="Dashboard" />
         <SidebarItem icon={<FaLayerGroup />} label="NFT Marketplace" />

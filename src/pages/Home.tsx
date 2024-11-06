@@ -36,7 +36,7 @@ const Home = () => {
         <div className="flex justify-center">
           <div className="inline-block">
             <Button
-              text="Sign Up for Fre"
+              text="Sign Up for Free"
               style="primary"
               width="large"
               onClick={() => console.log("Added to cart")}
