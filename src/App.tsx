@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/Error";
 import Privacy from "./pages/Privacy";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/FAQ" element={<FAQ />} />
-
+          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Blogs" element={<Home />}>
             {/* Nested Route for Developer Blog */}
 

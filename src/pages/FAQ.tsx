@@ -2,6 +2,7 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  Transition,
 } from "@headlessui/react";
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 
@@ -16,16 +17,7 @@ const faqs = [
     answer:
       "You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aut tempora vitae odio inventore fuga aliquam nostrum quod porro. Delectus quia facere id sequi expedita natus.",
   },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
+  // other FAQs...
 ];
 
 export default function Example() {
@@ -56,11 +48,22 @@ export default function Example() {
                     </span>
                   </DisclosureButton>
                 </dt>
-                <DisclosurePanel as="dd" className="mt-2 pr-12">
-                  <p className="text-base leading-7 text-gray-600">
-                    {faq.answer}
-                  </p>
-                </DisclosurePanel>
+                <Transition
+                  as="dd"
+                  enter="transition-all duration-300 ease-in-out"
+                  enterFrom="transform -translate-y-2 opacity-0 max-h-0"
+                  enterTo="transform translate-y-0 opacity-100 max-h-screen"
+                  leave="transition-all duration-300 ease-in-out"
+                  leaveFrom="transform translate-y-0 opacity-100 max-h-screen"
+                  leaveTo="transform -translate-y-2 opacity-0 max-h-0"
+                  className="overflow-hidden"
+                >
+                  <DisclosurePanel className="mt-2 pr-12">
+                    <p className="text-base leading-7 text-gray-600">
+                      {faq.answer}
+                    </p>
+                  </DisclosurePanel>
+                </Transition>
               </Disclosure>
             ))}
           </dl>

@@ -46,7 +46,9 @@ const PriceCard = (props: Props) => {
       }}
     >
       <div className="flex items-center justify-between gap-x-4">
-        <h2 className="text-lg font-semibold leading-8 text-white">{label}</h2>
+        <h2 className="text-lg font-semibold leading-8 text-gray-300 hover:text-white">
+          {label}
+        </h2>
         <div className="flex space-x-2">
           {popular && (
             <span className="rounded-full bg-indigo-500 px-2.5 py-1 text-xs font-semibold leading-5 text-white">
@@ -57,7 +59,7 @@ const PriceCard = (props: Props) => {
       </div>
       <p className="mt-4 text-sm leading-6 text-gray-300">{description}</p>
       <p className="mt-6 flex items-baseline gap-x-1">
-        <span className="text-4xl font-semibold tracking-tight text-white">
+        <span className="text-4xl font-semibold tracking-tight text-black dark:text-white">
           {price}
         </span>
         <span className="text-sm font-semibold leading-6 text-gray-300">
@@ -68,8 +70,8 @@ const PriceCard = (props: Props) => {
         href={href}
         className={classNames(
           isSelected
-            ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
-            : "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white",
+            ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-300 focus-visible:outline-indigo-500"
+            : "bg-gray-500 dark:bg-white/10 text-black dark:text-white hover:bg-gray-400 focus-visible:outline-white",
           "mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         )}
       >

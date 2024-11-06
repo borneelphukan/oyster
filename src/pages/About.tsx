@@ -178,10 +178,10 @@ export default function Example() {
                       key={stat.label}
                       className="flex flex-col-reverse gap-y-4"
                     >
-                      <dt className="text-base leading-7 text-gray-600">
+                      <dt className="text-base leading-7 text-gray-600 dark:text-white">
                         {stat.label}
                       </dt>
-                      <dd className="text-5xl font-semibold tracking-tight text-gray-900">
+                      <dd className="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">
                         {stat.value}
                       </dd>
                     </div>
