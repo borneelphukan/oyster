@@ -73,6 +73,7 @@ const Finance = () => {
       </div>
 
       <div>
+        <h2 className="text-2xl font-semibold mb-4">Revenue & Expenses</h2>
         <ResponsiveGridLayout
           className="layout"
           layouts={{ lg: sectionLayouts.slice(6, 8) }}

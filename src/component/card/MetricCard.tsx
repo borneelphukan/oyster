@@ -9,7 +9,7 @@ type Props = {
   companyName?: string;
   stockName?: string;
   stockValue?: string;
-  trend?: "up" | "down"; // "up" for green arrow, "down" for red arrow
+  trend?: "up" | "down";
 };
 
 const MetricCard = ({
