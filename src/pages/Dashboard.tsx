@@ -5,6 +5,7 @@ import Finance from "./dashboards/finance";
 import DashboardMain from "./dashboards/dashboard";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import Insights from "./dashboards/insights";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -40,11 +41,12 @@ const Dashboard = () => {
         </button>
 
         {/* Header */}
-        <header className="mb-8">
+        <header className="mb-4">
           <h1 className="text-3xl font-bold">{selectedSection}</h1>
         </header>
         {selectedSection === "Dashboard" && <DashboardMain />}
         {selectedSection === "Financials" && <Finance />}
+        {selectedSection === "Market Insights" && <Insights />}
       </div>
     </div>
   );
