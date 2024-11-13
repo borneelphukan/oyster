@@ -56,7 +56,7 @@ const PieChart = ({ data }: RevenuePieChartProps) => {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full">
       <Pie data={chartData} options={options} />
     </div>
   );
