@@ -15,8 +15,7 @@ import { Fragment, useState } from "react";
 const user = {
   name: "Gurdeep",
   email: "gurdeepbhumra@gmail.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  imageUrl: "https://eu.ui-avatars.com/api/?name=John+Doe&size=250",
 };
 
 const navigation = [
@@ -36,11 +35,19 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  // State to manage active navigation item
   const [activeNav, setActiveNav] = useState<string>("Home");
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
-    <Disclosure as="header" className="bg-gray-800">
+    <Disclosure
+      as="header"
+      className={`bg-gray-800 ${isDarkTheme ? "dark" : ""}`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">
@@ -105,14 +112,14 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {userNavigation.map((item) => (
+                    <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      {userNavigation.slice(0, -1).map((item) => (
                         <MenuItem key={item.name}>
                           {({ active }) => (
                             <Link
                               to={item.href}
-                              className={`block px-4 py-2 text-sm text-gray-700 ${
-                                active ? "bg-gray-400" : ""
+                              className={`block px-4 py-2 text-sm text-gray-700 dark:text-white ${
+                                active ? "bg-gray-400 dark:bg-black" : ""
                               }`}
                             >
                               {item.name}
@@ -120,6 +127,34 @@ export default function Navbar() {
                           )}
                         </MenuItem>
                       ))}
+                      {/* Theme Toggle Button above Sign Out */}
+                      <MenuItem>
+                        {({ active }) => (
+                          <button
+                            onClick={toggleTheme}
+                            className={`flex items-center justify-between w-full px-4 py-2 text-left text-sm ${
+                              isDarkTheme ? "text-white" : "text-gray-700"
+                            } ${active ? "bg-gray-400 dark:bg-black" : ""}`}
+                          >
+                            Theme:
+                            <span className="ml-2">
+                              {isDarkTheme ? "Dark 🌙" : "Light ☀️"}
+                            </span>
+                          </button>
+                        )}
+                      </MenuItem>
+                      <MenuItem>
+                        {({ active }) => (
+                          <Link
+                            to="/signout"
+                            className={`block px-4 py-2 text-sm text-gray-700 dark:text-white ${
+                              active ? "bg-gray-400 dark:bg-black" : ""
+                            }`}
+                          >
+                            Sign out
+                          </Link>
+                        )}
+                      </MenuItem>
                     </MenuItems>
                   </Transition>
                 </Menu>
@@ -147,78 +182,10 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-
-              {/* More Dropdown with Transition */}
-              <Menu as="div" className="relative">
-                <MenuButton
-                  className={classNames(
-                    activeNav === "More" ||
-                      activeNav === "FAQ" ||
-                      activeNav === "Widgets"
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "inline-flex items-center rounded-md px-3 py-2 text-sm font-medium focus:outline-none"
-                  )}
-                  onClick={() => setActiveNav("More")}
-                >
-                  <span>More</span>
-                  <svg
-                    className="ml-1 h-5 w-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </MenuButton>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <MenuItems className="absolute left-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <MenuItem>
-                      {({ active }) => (
-                        <Link
-                          to="/faq"
-                          className={`block px-4 py-2 text-sm text-gray-700 ${
-                            active ? "bg-gray-400" : ""
-                          }`}
-                          onClick={() => setActiveNav("FAQ")}
-                        >
-                          FAQ
-                        </Link>
-                      )}
-                    </MenuItem>
-                    <MenuItem>
-                      {({ active }) => (
-                        <Link
-                          to="/widgets"
-                          className={`block px-4 py-2 text-sm text-gray-700 ${
-                            active ? "bg-gray-400" : ""
-                          }`}
-                          onClick={() => setActiveNav("Widgets")}
-                        >
-                          Widgets
-                        </Link>
-                      )}
-                    </MenuItem>
-                  </MenuItems>
-                </Transition>
-              </Menu>
             </nav>
           </div>
 
-          {/* Mobile Navigation with Smooth Transition */}
+          {/* Mobile Navigation */}
           <Transition
             show={open}
             as={Fragment}
@@ -248,89 +215,14 @@ export default function Navbar() {
                     {item.name}
                   </DisclosureButton>
                 ))}
-
-                {/* More Dropdown (Mobile) with Transition */}
-                <Disclosure as="div" className="space-y-1">
-                  {({ open: openMore }) => (
-                    <>
-                      <DisclosureButton
-                        className={classNames(
-                          activeNav === "More" ||
-                            activeNav === "FAQ" ||
-                            activeNav === "Widgets"
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium focus:outline-none"
-                        )}
-                        onClick={() => setActiveNav("More")}
-                      >
-                        <span>More</span>
-                        <svg
-                          className={`ml-2 h-5 w-5 transform transition-transform ${
-                            openMore ? "rotate-180" : "rotate-0"
-                          }`}
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </DisclosureButton>
-                      <Transition
-                        show={openMore}
-                        as={Fragment}
-                        enter="transition ease-out duration-200"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-150"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <DisclosurePanel className="space-y-1">
-                          <Link
-                            to="/blogs/faq"
-                            className={classNames(
-                              activeNav === "FAQ"
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                              "block rounded-md px-6 py-2 text-base font-medium"
-                            )}
-                            onClick={() => setActiveNav("FAQ")}
-                          >
-                            FAQ
-                          </Link>
-                          <Link
-                            to="/blogs/widgets"
-                            className={classNames(
-                              activeNav === "Widgets"
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                              "block rounded-md px-6 py-2 text-base font-medium"
-                            )}
-                            onClick={() => setActiveNav("Widgets")}
-                          >
-                            Widgets
-                          </Link>
-                        </DisclosurePanel>
-                      </Transition>
-                    </>
-                  )}
-                </Disclosure>
               </div>
               <div className="border-t border-gray-700 pb-3 pt-4">
                 <div className="flex items-center px-4">
-                  <div className="flex-shrink-0">
-                    <img
-                      alt=""
-                      src={user.imageUrl}
-                      className="h-10 w-10 rounded-full"
-                    />
-                  </div>
+                  <img
+                    alt=""
+                    src={user.imageUrl}
+                    className="h-10 w-10 rounded-full"
+                  />
                   <div className="ml-3">
                     <div className="text-base font-medium text-white">
                       {user.name}
@@ -339,32 +231,36 @@ export default function Navbar() {
                       {user.email}
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="h-6 w-6" />
-                  </button>
                 </div>
                 <div className="mt-3 space-y-1 px-2">
-                  {userNavigation.map((item) => (
+                  {userNavigation.slice(0, -1).map((item) => (
                     <DisclosureButton
                       key={item.name}
                       as={Link}
                       to={item.href}
-                      className={classNames(
-                        activeNav === item.name
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-400 hover:bg-gray-700 hover:text-white",
-                        "block rounded-md px-3 py-2 text-base font-medium"
-                      )}
-                      onClick={() => setActiveNav(item.name)}
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 dark:text-white hover:bg-gray-700 hover:text-white"
                     >
                       {item.name}
                     </DisclosureButton>
                   ))}
+                  {/* Theme Toggle Button under Settings and above Sign Out */}
+                  <DisclosureButton
+                    as="button"
+                    onClick={toggleTheme}
+                    className="flex items-center justify-between w-full rounded-md px-3 py-2 text-base font-medium text-gray-300 dark:text-white hover:bg-gray-700 hover:text-white"
+                  >
+                    Theme:
+                    <span className="ml-2">
+                      {isDarkTheme ? "Dark 🌙" : "Light ☀️"}
+                    </span>
+                  </DisclosureButton>
+                  <DisclosureButton
+                    as={Link}
+                    to="/signout"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 dark:text-white hover:bg-gray-700 hover:text-white"
+                  >
+                    Sign out
+                  </DisclosureButton>
                 </div>
               </div>
             </DisclosurePanel>

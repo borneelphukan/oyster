@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Navbar from "../component/layout/Navbar";
-import ThemeSwitch from "../component/common/ThemeSwitch";
 import Footer from "../component/layout/Footer";
 import Loader from "../component/common/Loader";
 
@@ -22,10 +21,7 @@ const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
       ) : (
         <div className="min-h-screen">
           <Navbar />
-          <main>
-            {children}
-            <ThemeSwitch />
-          </main>
+          <main>{children}</main>
 
           <footer>
             <Footer />
